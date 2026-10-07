@@ -1,0 +1,78 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct advisor{
+    string name;
+    string dept;
+    string off_num;
+};
+
+struct student{
+
+    int id;
+    string name;
+    float GPA;
+    advisor adv;
+
+};
+
+int main(){
+
+    int N;
+
+    cout << "Enter the number of students: ";
+    cin >> N;
+    cin.ignore();
+
+    student students [N];
+
+    for(int i = 0; i < N; i++){
+        cout << "=== Student " << i+1 << " ===" << endl;
+
+        cout << "Name: ";
+        getline(cin, students[i].name);
+
+        cout << "ID: ";
+        cin >> students[i].id;
+        cin.ignore();
+
+        cout << "GPA: ";
+        cin >> students[i].GPA;
+        cin.ignore();
+        
+        cout << "Advisor Name: ";
+        getline(cin, students[i].adv.name);
+
+        cout << "Department: ";
+        getline(cin, students[i].adv.dept);
+
+        cout << "Office number: ";
+        getline(cin, students[i].adv.off_num);
+
+    }
+
+    cout << "=== Students Information ===" << endl;
+    cout << endl;
+
+    for(int i = 0; i < N; i++){
+
+        cout << "=== Student " << i+1 << " ===" << endl;
+
+        cout << "Name: " << students[i].name << endl;
+        cout << "ID: " << students[i].id << endl;
+        cout << "GPA: " << students[i].GPA << endl;
+        cout << endl;
+
+        cout << "=== Advisor ===" << endl;
+        cout << endl;
+
+        cout << "Advisor Name: " << students[i].adv.name << endl;
+        cout << "Department: " << students[i].adv.dept << endl;
+        cout << "Office number: " << students[i].adv.off_num << endl;
+        cout << endl;
+    }
+
+
+    return 0;
+}
